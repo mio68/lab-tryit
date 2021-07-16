@@ -19,7 +19,7 @@ public class ConcurencyWithVolatile {
 
 	    t.start();
 
-	    Thread.currentThread().sleep(1000);
+	    Thread.sleep(1000);
 	    stop = true;
 
     }
