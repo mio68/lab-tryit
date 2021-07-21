@@ -1,17 +1,16 @@
 package mio68.lab.tryit;
 
 public class DisemvowelTrolls {
-    private static long sum;
+ /**These letters are vowels in English:
+    A, E, I, O, U, and sometimes Y.
+  */
+    public static final String vowels = "aeiouAEIOU";
 
     public static String disemvowel(String str) {
-        return str;
+        return String.join("", str.split("[aeiouAEIOU]"));
     }
 
     public static String disemvowel2(String str) {
-//        sum = 0;
-//        for(int i=0; i < 10000000;i++) {
-//            sum = + i;
-//        }
-        return str;
+        return str.replaceAll("[aeiouAEIOU]","");
     }
 }
