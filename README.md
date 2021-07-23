@@ -1,12 +1,12 @@
-Поучительные или не очень примеры кода из разных источников. Пробы пера на разные темы. Решения задач и т.д. и т.п.
+### Поучительные или не очень примеры кода из разных источников. Пробы пера на разные темы. Решения задач и т.д. и т.п.
 
-1. Джошуа Блох. Effective Java. Item 78: Synchronize access to shared mutable data 
-   
+1. #### Джошуа Блох. Effective Java. Item 78: Synchronize access to shared mutable data
+
 Конкурентный доступ к данным см здесь: 
 * ConcurencyWithVolatile
 * ConcurrncyWithSynchronized
 
-2. DisemvowelTrolls от CodeWars и тесты производительности методов с JMH.
+2. #### DisemvowelTrolls от CodeWars и тесты производительности методов с JMH.
    
 Задача
 
