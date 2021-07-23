@@ -1,5 +1,6 @@
 package mio68.lab.tryit;
 
+import mio68.lab.tryit.codewars.DisemvowelTrolls;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

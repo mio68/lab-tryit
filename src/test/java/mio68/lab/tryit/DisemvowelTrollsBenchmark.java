@@ -1,5 +1,6 @@
 package mio68.lab.tryit;
 
+import mio68.lab.tryit.codewars.DisemvowelTrolls;
 import org.openjdk.jmh.annotations.*;
 
 import java.util.concurrent.TimeUnit;
