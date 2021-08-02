@@ -37,3 +37,17 @@
 * mio68.lab.tryit.codewars.PangramChecker
 
 Обработка символов строки с помощью Stream. Дешево и сердито...
+
+5. #### Сортировка слов в предложении от CodeWars
+
+Задача
+
+* mio68.lab.tryit.codewars.Order
+
+Среди вариантов предложенных другими понравился тот, где для выделения цифры включенной в 
+слово используются метод замены по регулярному выражению, убирающий все не цифровые символы.
+
+`        return Arrays.stream(words.split(" "))
+                .sorted( Comparator.comparing( w -> w.replaceAll("\\D","")))
+                .collect(Collectors.joining(" "));
+`
