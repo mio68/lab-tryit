@@ -51,3 +51,5 @@
                 .sorted( Comparator.comparing( w -> w.replaceAll("\\D","")))
                 .collect(Collectors.joining(" "));
 `
+
+Для тестирования используется Hamcrest см https://www.baeldung.com/java-junit-hamcrest-guide 
