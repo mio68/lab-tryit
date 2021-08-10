@@ -52,4 +52,18 @@
                 .collect(Collectors.joining(" "));
 `
 
-Для тестирования используется Hamcrest см https://www.baeldung.com/java-junit-hamcrest-guide 
+Для тестирования используется Hamcrest см https://www.baeldung.com/java-junit-hamcrest-guide
+
+6. #### Create Phone Number от CodeWars
+
+* mio68.lab.tryit.codewars.Kata
+
+Простая задача дающая много решений. Простое решение - некрасивый код, красивый код - 
+но скорее всего не эффективный по производительности. Остановился на варианте 3.
+В итоге понравилось чужое решение с преобразованием массива int в массив Integer (см вариант 5 в классе Kata)
+
+`public static String createPhoneNumber(int[] numbers) {
+return String.format("(%d%d%d) %d%d%d-%d%d%d%d", IntStream.of(numbers).boxed().toArray());
+}`
+
+Ну и про Java varargs посмотрел заодно https://javarush.ru/groups/posts/2733-java-varargs
