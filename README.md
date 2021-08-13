@@ -67,3 +67,20 @@ return String.format("(%d%d%d) %d%d%d-%d%d%d%d", IntStream.of(numbers).boxed().t
 }`
 
 Ну и про Java varargs посмотрел заодно https://javarush.ru/groups/posts/2733-java-varargs
+
+7. ##### Maximum subarray sum от CodeWars
+
+* mio68.lab.tryit.codewars.Max
+
+Решил но несколько витиевато. Можно было обойтись без флага и использовать текущюю сумму со значением 
+0 как индиктор фазы накопления. Но мое решение мне кажется более прозрачным и документированным.
+Проголосовал за следующее решение
+
+`public static int sequence(int[] arr) {
+int max_ending_here = 0, max_so_far = 0;
+for (int v : arr) {
+max_ending_here = Math.max(0, max_ending_here + v);
+max_so_far = Math.max(max_so_far, max_ending_here);
+}
+return max_so_far;
+}`
