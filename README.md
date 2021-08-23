@@ -117,3 +117,29 @@ switch с лямбдами в стиле Java 12.
 * mio68.lab.tryit.codewars.Solution
 
 Среди прочих решений не увидел поучительных. Не было и значительно более коротких. Скучновато.
+
+12. #### Common Denominators от CodeWars
+
+* mio68.lab.tryit.codewars.Fracts
+
+Коротких решений не было. Кода у всех много. Узнал английские варианты для 
+НОК(наименьшее общее кратное) - LCM, НОД(наибольший общий делитель) - GCD. 
+Пример с рекурсией:
+
+
+`private static long gcd(long a, long b) {
+return b == 0 ? a : gcd(b, a % b);
+}
+private static long lcm(long a, long b) {
+        return (a * b) / gcd(a, b);
+}
+`
+
+Пример с лямбдами:
+
+`class Fracts {
+static LongBinaryOperator gcd = (a, b) -> valueOf(a).gcd(valueOf(b)).longValue();
+static LongBinaryOperator lcm = (a, b) -> b / gcd.applyAsLong(a, b) * a;
+...
+ ...Fracts.lcm::applyAsLong...
+...`

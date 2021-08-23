@@ -4,45 +4,59 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 
 public class Fracts {
-    // your code
-    public static String convertFrac(long[][] lst) {
-        long[][] reducedFractions = reduce(lst);
-        long[] denominators = Arrays.stream(reducedFractions).mapToLong(r -> r[1]).toArray();
-        long commonDenom = nok(denominators); System.out.println("common denom = " + commonDenom);
-        //set common denominator
-        for (long[] fract : reducedFractions ) {
-            fract[0] = fract[0] * commonDenom / fract[1];
-            fract[1] = commonDenom;
-        }
 
-        return Arrays.stream(reducedFractions).map(fract -> Arrays.toString(fract)
-                .replaceAll("\\[","(").replaceAll("\\]",")").replaceAll(" ",""))
-                .collect(Collectors.joining());
+    public static String convertFrac(long[][] lst) {
+        if(lst.length == 0)
+            return "";
+
+        long[][] simplifiedFracts = simplify(lst);
+        long commonDenom = nok(getDenoms(simplifiedFracts));
+        setDenom(simplifiedFracts, commonDenom);
+        return fractToString(simplifiedFracts);
+    }
+
+    public static long[] getDenoms(long[][] fractions) {
+        return Arrays.stream(fractions).mapToLong(r -> r[1]).toArray();
+    }
+
+    private static void setDenom(long[][] fractions, long denom) {
+        for (long[] fract : fractions )
+            setDenom(fract, denom);
+    }
+
+    private static void setDenom(long[] fract, long denom) {
+        fract[0] = fract[0] * denom / fract[1];
+        fract[1] = denom;
+    }
+
+    public static String fractToString(long[][] fractions) {
+            return Arrays.stream(fractions)
+                    .map(Arrays::toString)
+                    .collect(Collectors.joining())
+                    .replaceAll("\\[","(")
+                    .replaceAll("]",")")
+                    .replaceAll(" ","");
     }
 
     public static long nok(long... nums) {
-        long [] distinctNums = Arrays.stream(nums).distinct().toArray();
-        long res = prod(distinctNums);
-        long d = nod(distinctNums);
-        for (int i = 0; i < distinctNums.length; i++)
-            res /= d;
-        return res;
+        long nok = nums[0];
+        for (int i = 1; i < nums.length; i++)
+            nok = nok(nok, nums[i]);
+        return nok;
     }
 
-    public static long prod(long... nums) {
-        long prod = 1;
-        for (long num: nums ) prod *= num;
-        return prod;
+    public static long nok(long i, long j) {
+        return i * j / nod(i, j);
     }
 
-    public static long[][] reduce(long[][] ar) {
+    public static long[][] simplify(long[][] ar) {
         long [][] res = new long[ar.length][];
         for(int i = 0; i < ar.length; i++)
-            res[i] = reduce(ar[i]);
+            res[i] = simplify(ar[i]);
         return res;
     }
 
-    public static long[] reduce(long [] r) {
+    public static long[] simplify(long [] r) {
         long d = nod(r);
         return new long[]{r[0]/d, r[1]/d};
     }
@@ -55,11 +69,18 @@ public class Fracts {
     }
 
     public static long nod(long i, long j) {
+        //order them
         if(i < j) { long t = i; i = j; j = t;}
 
         long r;
         while ((r = i % j) != 0) { i = j; j = r; }
 
         return j;
+    }
+
+    public static void printFractions(long[][] fractions) {
+        for (long[] fract: fractions )
+            System.out.print( Arrays.toString(fract) + ",");
+        System.out.println();
     }
 }
