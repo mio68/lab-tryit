@@ -143,3 +143,16 @@ static LongBinaryOperator lcm = (a, b) -> b / gcd.applyAsLong(a, b) * a;
 ...
  ...Fracts.lcm::applyAsLong...
 ...`
+
+13. ##### Greed is Good  от CodeWars
+
+* mio68.lab.tryit.codewars.Greed
+
+Попрактиковал Stream API (grouping and conunting). Из предложенных другими проголосовал за короткий вариант
+, в частности этот вариант легко реализовать на любых языках:
+
+`public static int greedy(int[] dice) {
+int n[] = new int[7];
+for (int d : dice) n[d]++;
+return n[1]/3*1000 + n[1]%3*100 + n[2]/3*200 + n[3]/3*300 + n[4]/3*400 + n[5]/3*500 + n[5]%3*50 + n[6]/3*600;
+}`
