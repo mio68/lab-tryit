@@ -17,7 +17,7 @@ public class Greed{
         if(v == 1)
             v = 10; // 1 actually means 10 here
 
-        return  (counter >= 3 ? v * 100 : 0) // if any value repeats 3 or more times
+        return  (counter >= 3 ? v * 100 : 0) // if any value repeats 3 or more times.  можно было улучшить! (counter / 3) * v * 100
                 + (v % 5 == 0 ? v * 10 * (counter % 3) : 0); // for values 10 and 5 add some more points :)
     }
 }
