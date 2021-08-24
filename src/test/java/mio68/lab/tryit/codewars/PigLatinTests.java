@@ -1,4 +1,4 @@
-package mio68.lab.tryit;
+package mio68.lab.tryit.codewars;
 
 
 import mio68.lab.tryit.codewars.PigLatin;
