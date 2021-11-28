@@ -1,4 +1,4 @@
-package mio68.lab.tryit;
+package mio68.lab.tryit.codewars;
 
 import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.assertThat;

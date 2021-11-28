@@ -165,3 +165,24 @@ return n[1]/3*1000 + n[1]%3*100 + n[2]/3*200 + n[3]/3*300 + n[4]/3*400 + n[5]/3*
 замену это $n где n - номер группы ( не забудь про нумерацию, 0 - это номер всего match) 
 
 ` Pattern.compile("(\\w)(\\w*)").matcher(str).replaceAll("$2$1ay");`
+
+15. #### Рауль Урма, Марио Фуско, Алан Майкрофт Современный язык Java. 2 издание. Глава Параллельная обработка данных и производительность
+
+Суммируем числа от 1 до 10 000 000. Тремя способами - 
+* mio68.lab.tryit.concurrency.SequenceSum.iterativeSum - при помощи цикла for(внешняя итерация)  
+* mio68.lab.tryit.concurrency.SequenceSum.rangedSum - с использованием Stream API (внутренняя итераци)
+* mio68.lab.tryit.concurrency.SequenceSum.parallelRangedSum - с использованием Stream API и распараллеливанием (внутренняя итераци)
+* mio68.lab.tryit.concurrency.SequenceSumBenchmarkTest - тест производительности с использованием JMH 
+Результаты
+<pre>
+    Benchmark                                   Mode  Cnt  Score   Error  Units
+    SequenceSumBenchmarkTest.iterativeSum       avgt   10  5,480 ? 3,123  ms/op
+    SequenceSumBenchmarkTest.parallelRangedSum  avgt   10  1,105 ? 0,006  ms/op
+    SequenceSumBenchmarkTest.rangedSum          avgt   10  7,121 ? 0,010  ms/op
+</pre>
+Также наблюдал загрузку процессора в диспетчере задач 
+* mio68.lab.tryit.concurrency.SequenceSum.iterativeSum ~10%
+* mio68.lab.tryit.concurrency.SequenceSum.rangedSum ~10% 
+* mio68.lab.tryit.concurrency.SequenceSum.parallelRangedSum ~50%
+
+При включении parаllel процессор задействован больше в 5 раз!
