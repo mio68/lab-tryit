@@ -30,7 +30,9 @@ class FlatMapExample {
 //                .flatMap(List::stream)
 //                .collect(Collectors.toList());
 
-        List<int[]> pairs = listA.stream().flatMap(i -> listB.stream().map(j -> new int[]{i,j}))
+        List<int[]> pairs = listA.stream()
+                .flatMap(i -> listB.stream()
+                        .map(j -> new int[]{i,j}))
                 .collect(Collectors.toList());
 
         for(int [] pair: pairs)

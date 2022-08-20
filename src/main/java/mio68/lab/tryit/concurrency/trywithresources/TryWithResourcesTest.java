@@ -10,35 +10,35 @@ public class TryWithResourcesTest {
             example2();
         } catch (ClosingException e) {
             System.out.println("example 2 call failed");
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }
 
         try {
             example3();
         } catch (Exception e) {
             System.out.println("example 3 call failed");
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }
 
         try {
             example4();
         } catch (Exception e) {
             System.out.println("example 4 call failed");
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }
 
         try {
             example5();
         } catch (Exception e) {
             System.out.println("example 5 call failed");
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }
 
         try {
             example6();
         } catch (Exception e) {
             System.out.println("example 6 call failed");
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }
 
     }
@@ -51,7 +51,7 @@ public class TryWithResourcesTest {
             System.out.println("try block of example 1");
         } catch (ClosingException e) {
             System.out.println("catch block of example 1");
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }
     }
 
