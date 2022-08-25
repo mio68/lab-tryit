@@ -1,4 +1,4 @@
-package mio68.lab.tryit.concurrency.trywithresources;
+package mio68.lab.tryit.trywithresources;
 
 public class TryWithResourcesTest {
 
