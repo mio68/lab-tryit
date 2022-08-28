@@ -12,7 +12,7 @@ public class ChooserWithArray<T> {
 
     // I am sure that choices contains elements of type T!
     @SuppressWarnings("unchecked")
-    public ChooserWithArray(Collection<T> collection) {
+    public ChooserWithArray(Collection<? extends T> collection) {
 
         //Let me know choices field type by reflection, before initialization.
         printChoicesTypeInfo();
