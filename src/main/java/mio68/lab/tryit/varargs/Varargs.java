@@ -18,6 +18,9 @@ public class Varargs {
         Varargs varargs = new Varargs();
 
         varargs.m("one", "two"); // method with two parameters is called.
+
+        varargs.m("one", "two", "three"); //method with vararg is called.
         varargs.m("one"); //method with vararg is called.
+        varargs.m(); //method with vararg is called.
     }
 }
