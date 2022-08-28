@@ -14,6 +14,16 @@ public class Varargs {
         System.out.println("method with vararg is called.");
     }
 
+/*
+    Adding of this method leads to ambiguity!
+    java: reference to m is ambiguous
+    both method m(java.lang.String...) in mio68.lab.tryit.varargs.Varargs and
+    method m(java.lang.String,java.lang.String...) in mio68.lab.tryit.varargs.Varargs match
+*/
+//    public void m(String s, String... strings) {
+//        System.out.println("Adding of this method leads to ambiguity!");
+//    }
+
     public static void main(String[] args) {
         Varargs varargs = new Varargs();
 
