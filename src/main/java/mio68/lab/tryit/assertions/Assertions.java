@@ -12,7 +12,7 @@ public class Assertions {
         return arr.length;
     }
 
-    public  <T> int getLengthWithObjects(T[] arr) {
+    public  <T> int getLengthWithObjectsUtil(T[] arr) {
         return Objects.requireNonNull(arr, "not null array is required").length;
     }
 
@@ -30,7 +30,7 @@ public class Assertions {
         }
 
         try {
-            len = a.getLengthWithObjects(null); // NullPointerException with custom message
+            len = a.getLengthWithObjectsUtil(null); // NullPointerException with custom message
         } catch (Exception e) {
             e.printStackTrace();
         }
