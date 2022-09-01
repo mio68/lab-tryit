@@ -1,4 +1,4 @@
-package mio68.lab.tryit.optionals.model;
+package mio68.lab.tryit.model;
 
 import lombok.Data;
 

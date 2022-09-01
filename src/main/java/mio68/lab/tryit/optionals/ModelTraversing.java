@@ -1,8 +1,8 @@
 package mio68.lab.tryit.optionals;
 
-import mio68.lab.tryit.optionals.model.Car;
-import mio68.lab.tryit.optionals.model.Insurance;
-import mio68.lab.tryit.optionals.model.Person;
+import mio68.lab.tryit.model.Car;
+import mio68.lab.tryit.model.Insurance;
+import mio68.lab.tryit.model.Person;
 
 import java.util.Optional;
 
