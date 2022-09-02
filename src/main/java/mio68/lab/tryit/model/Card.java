@@ -1,5 +1,8 @@
 package mio68.lab.tryit.model;
 
+import lombok.ToString;
+
+@ToString
 public class Card {
 
     private final Suit suit;
@@ -8,6 +11,14 @@ public class Card {
     public Card(Suit suit, Rank rank) {
         this.suit = suit;
         this.rank = rank;
+    }
+
+    public Suit getSuit() {
+        return suit;
+    }
+
+    public Rank getRank() {
+        return rank;
     }
 
     public enum Suit {CLUB, DIAMOND, HEART, SPADE}
