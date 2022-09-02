@@ -51,7 +51,7 @@ public class Car implements Comparable<Car> {
                 new Car("Toyota","Yaris"),
                 new Car("Toyota","Mark2"),
                 new Car("Ford","Focus","V2"),
-                new Car("Toyota","Camri"),
+                new Car("Toyota","Camry"),
                 new Car("Ford","Focus"),
                 new Car("Ford","Focus","V3"),
                 new Car("Ford","Focus","V2-restyling"),

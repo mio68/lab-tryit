@@ -10,7 +10,7 @@ import java.util.List;
 @ToString
 public class Product implements Comparable<Product> {
 
-    private static Comparator<String> MODIFICATION_COMPARATOR =
+    private static final Comparator<String> MODIFICATION_COMPARATOR =
             Comparator.nullsFirst(String::compareTo);
 
     private final String manufacturer;
@@ -49,7 +49,7 @@ public class Product implements Comparable<Product> {
                 new Product("Toyota","Yaris"),
                 new Product("Toyota","Mark2"),
                 new Product("Ford","Focus","V2"),
-                new Product("Toyota","Camri"),
+                new Product("Toyota","Camry"),
                 new Product("Ford","Focus"),
                 new Product("Ford","Focus","V3"),
                 new Product("Ford","Focus","V2-restyling"),
