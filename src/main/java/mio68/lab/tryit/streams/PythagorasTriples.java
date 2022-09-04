@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import static mio68.lab.tryit.streams.Lcd.lcd;
+import static mio68.lab.tryit.math.Gcd.gcd;
 
 public class PythagorasTriples {
 
@@ -27,7 +27,7 @@ public class PythagorasTriples {
     }
 
     public static boolean isPrimitive(int[] triple) {
-        return lcd(lcd(triple[0], triple[1]), lcd(triple[1], triple[2])) == 1;
+        return gcd(gcd(triple[0], triple[1]), gcd(triple[1], triple[2])) == 1;
     }
 
     public static boolean isIntegerHypotenuse(int catA, int catB) {
