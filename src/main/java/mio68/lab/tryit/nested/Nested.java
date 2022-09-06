@@ -1,8 +1,10 @@
 package mio68.lab.tryit.nested;
 
 import mio68.lab.tryit.model.Card;
+import mio68.lab.tryit.model.Person;
 
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Nested {
 
@@ -12,23 +14,42 @@ public class Nested {
         this.title = title;
     }
 
+    public Person getPerson() {
+        return new Person() {
+            @Override
+            public String getFirstName() {
+                return "John";
+            }
 
+            @Override
+            public String getLastName() {
+                return "Doe";
+            }
+        };
+    }
 
     class InnerCard extends Card {
+        // Something strange! Inner class defined static members!
+
+        private static final AtomicInteger idGenerator = new AtomicInteger(0);
         private static final String description = "This is card class to be used with Nested instances";
         private static final Card.Suit DEFAULT_SUIT = Card.Suit.DIAMOND;
         private static final Card.Rank DEFAULT_RANK = Rank.ACE;
+        private static String aStaticNonFinalMember;
 
         private String constructionDetails;
+        private final int id;
 
         public InnerCard() {
             super(DEFAULT_SUIT, DEFAULT_RANK);
             constructionDetails = "Constructed with default suit and rank";
+            id = idGenerator.incrementAndGet();
         }
 
         public InnerCard(Suit suit, Rank rank) {
             super(suit, rank);
             constructionDetails = "Constructed with suit and rank";
+            id = idGenerator.incrementAndGet();
         }
 
         public String getOuterTitle() {
@@ -37,6 +58,10 @@ public class Nested {
 
         public String getConstructionDetails() {
             return constructionDetails;
+        }
+
+        public int getId() {
+            return id;
         }
     }
 
@@ -56,6 +81,9 @@ public class Nested {
     public static void main(String[] args) {
 
         Card cardOfAnonymousClass = new Card(Card.Suit.HEART, Card.Rank.ACE) {
+            private static final AtomicInteger idGenerator = new AtomicInteger(0); // It's ok!
+            private static int commonInt = 1;
+
             private int somewhatInt = 0;
 
             public int getSomewhatInt() {
@@ -64,6 +92,10 @@ public class Nested {
 
             public void setSomewhatInt(int somewhatInt) {
                 this.somewhatInt = somewhatInt;
+            }
+
+            public int getCommonInt() {
+                return commonInt;
             }
         };
 
@@ -103,6 +135,7 @@ public class Nested {
 
     private static void printInnerCardInfo(InnerCard innerCard) {
         System.out.println("innerCard: " + innerCard +
+                " id:" + innerCard.getId() +
                 " outerTitle: " + innerCard.getOuterTitle() +
                 " constructionDetails: " + innerCard.getConstructionDetails());
     }
