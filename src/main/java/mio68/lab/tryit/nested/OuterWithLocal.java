@@ -29,8 +29,39 @@ public class OuterWithLocal {
 
     }
 
+    void methodLocalInterfacesAreNotAllowedReally() {
+        interface LocalInterface {
+            void doIt();
+        }
+
+        class LocalClass implements LocalInterface {
+
+            @Override
+            public void doIt() {
+
+            }
+        }
+
+        LocalInterface localInterface = new LocalClass();
+        localInterface.doIt();
+    }
+
+    void methodWitLocalClassWithStaticMethod() {
+        class LocalClass {
+            static void doIt() {
+
+            }
+        }
+
+        LocalClass.doIt();
+    }
+
+
+
     public static void main(String[] args) {
         OuterWithLocal outerWithLocal = new OuterWithLocal();
         outerWithLocal.methodThatUsesLocalClass(1);
+        outerWithLocal.methodLocalInterfacesAreNotAllowedReally();
+        outerWithLocal.methodWitLocalClassWithStaticMethod();
     }
 }
