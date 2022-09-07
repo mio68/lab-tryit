@@ -10,8 +10,12 @@ public class CountSumAvgMinMaxStat {
         List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         System.out.println("Counting ----------");
         System.out.println("count: " + list.stream().count());
-        System.out.println("count with collector: " +list.stream().collect(Collectors.counting()));
-        System.out.println("count with reduce: " +list.stream().reduce(0, (i, j) -> i + 1));
+        System.out.println("count with collector: " +
+                list.stream().collect(Collectors.counting()));
+        System.out.println("count with reduce: " +
+                list.stream().reduce(0, (i, j) -> i + 1));
+        System.out.println("count with collector-reducing: " +
+                list.stream().collect(Collectors.reducing(0,(i, j) -> i + 1)));
 
         System.out.println("Summing -----------");
         System.out.println("sum with collector: " +
