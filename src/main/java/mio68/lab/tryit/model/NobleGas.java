@@ -11,13 +11,26 @@ public enum NobleGas {
     XENON(54),
     RADON(86);
 
+    private static final String stringConstant = "This is string constant!";
+    private static int anStaticIntField = 12345;
+
     private final int atomicNumber;
 
     NobleGas(int atomicNumber) {
         this.atomicNumber = atomicNumber;
+
+        // it's Ok!
+//      System.out.println(stringConstant);
+
+        // It's illegal to access static member form enum constructor of instance initializer
+//        System.out.println(anStaticIntField);
     }
 
     public int getAtomicNumber() {
         return atomicNumber;
+    }
+
+    public static void main(String[] args) {
+
     }
 }
