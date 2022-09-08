@@ -2,9 +2,11 @@ package mio68.lab.tryit.model;
 
 import lombok.Builder;
 import lombok.Getter;
+import lombok.ToString;
 
 @Builder
 @Getter
+@ToString
 public class StarWarsCharacter {
 
     private final String name;
@@ -15,15 +17,15 @@ public class StarWarsCharacter {
     private final Integer massInKg;
 
     public enum Species {
-        HUMAN, ZABRAK
+        HUMAN, ZABRAK, GUNGAN, KALEESH
     }
 
     public enum Homeworld {
-        NABOO, TATOOINE, DARTHOMIR
+        NABOO, TATOOINE, DARTHOMIR, CAMINO, STEWJON, CORUSCANT, KALEE
     }
 
     public enum Kind {
-        JEDI, MANDALORIAN, SITH
+        JEDI, MANDALORIAN, SITH, BOUNTY_HUNTER, NOBLE, WARLORD
     }
 
     public enum Gender {
