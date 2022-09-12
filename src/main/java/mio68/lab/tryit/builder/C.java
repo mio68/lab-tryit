@@ -20,10 +20,10 @@ public class C extends B {
     }
 
     protected static abstract class BuilderGen<T extends BuilderGen<T>> extends B.BuilderGen<T> {
-        protected int gammaReq;
-        protected int gammaOpt = 0;
+        private int gammaReq;
+        private int gammaOpt = 0;
 
-        public BuilderGen(int alphaReq, int betaReq, int gammaReq) {
+        protected BuilderGen(int alphaReq, int betaReq, int gammaReq) {
             super(alphaReq, betaReq);
             this.gammaReq = gammaReq;
         }

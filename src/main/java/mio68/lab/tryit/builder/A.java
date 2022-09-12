@@ -19,10 +19,10 @@ public abstract class A {
     }
 
     protected abstract static class BuilderGen<T extends BuilderGen<T>> {
-        protected int alphaReq;
-        protected int alphaOpt = 0;
+        private int alphaReq;
+        private int alphaOpt = 0;
 
-        public BuilderGen(int alphaReq) {
+        protected BuilderGen(int alphaReq) {
             this.alphaReq = alphaReq;
         }
 
