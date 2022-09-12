@@ -5,7 +5,7 @@ public class C extends B {
     private final int gammaReq;
     private final int gammaOpt;
 
-    C(Builder builder) {
+    C(BuilderGen<?> builder) {
         super(builder);
         this.gammaReq = builder.gammaReq;
         this.gammaOpt = builder.gammaOpt;

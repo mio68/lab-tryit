@@ -5,7 +5,7 @@ public class B extends A {
     private final int betaReq; // Required field
     private final int betaOpt; // Optional field
 
-    B(BuilderGen builder) {
+    B(BuilderGen<?> builder) {
         super(builder);
         betaReq = builder.betaReq;
         betaOpt = builder.betaOpt;

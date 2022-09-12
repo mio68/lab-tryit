@@ -5,7 +5,7 @@ public abstract class A {
     private final int alphaReq; // Required field
     private final int alphaOpt;   // Optional field
 
-    A(BuilderGen builder) {
+    A(BuilderGen<?> builder) {
         this.alphaReq = builder.alphaReq;
         this.alphaOpt = builder.alphaOpt;
     }
