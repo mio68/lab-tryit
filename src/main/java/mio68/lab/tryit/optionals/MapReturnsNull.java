@@ -8,7 +8,7 @@ public class MapReturnsNull {
         Optional<String> stringOptional = Optional.of("Hi there!");
 
         System.out.println(
-                stringOptional.map(s -> null)
+                stringOptional.map(s -> (String) null)
                         .orElse("Mapped to empty optional!")
         );
     }
