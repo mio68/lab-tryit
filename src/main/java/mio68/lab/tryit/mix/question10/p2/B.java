@@ -2,6 +2,12 @@ package mio68.lab.tryit.mix.question10.p2;
 
 import mio68.lab.tryit.mix.question10.p1.*;
 
+/**
+ * Данный вопрос отражает важное свойство спецификатора доступа protected. Во всех книгах
+ * и статьях пишут, что члены с доступом protected видны в данном пакете и в подклассах
+ * других пакетов. Но мало кто уточняет, что за пределами пакета данные члены видны ТОЛЬКО
+ * ЧЕРЕЗ НАСЛЕДОВАНИЕ.
+ */
 public class B extends A{
     public void process(A a) {
         //Compilation error
