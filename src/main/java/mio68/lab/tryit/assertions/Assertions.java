@@ -24,13 +24,15 @@ public class Assertions {
         int len = 0;
 
         try {
-            len = a.getLengthWithAssert(null); // AssertionError if VM options -ea is added
-        } catch (Throwable e) {
+            // AssertionError. VM options -ea is required for assertion to be checked.
+            len = a.getLengthWithAssert(null);
+        } catch (AssertionError e) {
             e.printStackTrace();
         }
 
         try {
-            len = a.getLengthWithObjectsUtil(null); // NullPointerException with custom message
+            // NullPointerException with custom message is thrown
+            len = a.getLengthWithObjectsUtil(null);
         } catch (Exception e) {
             e.printStackTrace();
         }
