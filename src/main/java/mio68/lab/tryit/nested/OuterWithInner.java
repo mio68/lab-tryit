@@ -2,14 +2,18 @@ package mio68.lab.tryit.nested;
 
 public class OuterWithInner {
 
-    private final String name;
+    private final String privateNameOfOuter;
 
-    public OuterWithInner(String name) {
-        this.name = name;
+    public OuterWithInner(String privateNameOfOuter) {
+        this.privateNameOfOuter = privateNameOfOuter;
     }
 
     public Inner newInnerInstance() {
         return new Inner(); // Outer class can create his inners
+    }
+
+    public void method(Inner inner) {
+        int r = inner.privateFieldOfInner; //Access to private field of inner.
     }
 
     public class Inner {
@@ -17,10 +21,11 @@ public class OuterWithInner {
         private static String commonLog = "Inner common log\n";
 
         private String doLog;
+        private int privateFieldOfInner = 0;
 
         public Inner() {
             // Inner class has access to members of outer class, even to private members
-            doLog = "Outer class name:" + name + " Inner is ready to work: ";
+            doLog = "Outer class name:" + privateNameOfOuter + " Inner is ready to work: ";
         }
 
         public String getDoLog() {
@@ -40,6 +45,10 @@ public class OuterWithInner {
 
         public String getCommonLog() {
                 return commonLog;
+        }
+
+        private void method() {
+            String s = privateNameOfOuter; // Access to private filed of outer class;
         }
     }
 
