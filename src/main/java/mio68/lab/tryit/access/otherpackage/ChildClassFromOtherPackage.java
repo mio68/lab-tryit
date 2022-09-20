@@ -65,6 +65,9 @@ public class ChildClassFromOtherPackage extends ParentClass {
     public void method(ChildClassFromOtherPackage instanceOfThisClass) {
         int r;
 
+        // access even to private field of course!
+        r = instanceOfThisClass.privateFieldOfChildClass;
+
         // access to package-private field of an instance of this class
 //NO ACCESS!  r = instanceOfThisClass.packagePrivateFieldOfParentClass;
         r = instanceOfThisClass.packagePrivateFieldOfChildClass;
