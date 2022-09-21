@@ -41,7 +41,10 @@ public class NonSymmetricEquals {
 
         List<CaseInsensitiveString> list = new ArrayList<>();
         list.add(cis);
-        System.out.println(list.contains(s));
+        System.out.println("list.add(cis);");
+        System.out.println("cis.equals(s): " + cis.equals(s));
+        System.out.println("but list.contains(s): " + list.contains(s) + "!!!");
+
         System.out.println(list.contains(cis2));
 
     }
