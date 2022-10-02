@@ -3,6 +3,9 @@ package mio68.lab.tryit.objectmethods.hash;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Хороший пример переопределения equals() и hashCode()
+ */
 public class EqualsWithHash {
 
     private static class PhoneNumber {
