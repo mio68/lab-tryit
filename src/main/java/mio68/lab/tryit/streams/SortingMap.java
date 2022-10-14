@@ -21,22 +21,16 @@ public class SortingMap {
                 .filter(s -> s.length() > 1)
                 .collect(Collectors.groupingBy(s -> s, Collectors.counting()));
 
-        Comparator<Map.Entry<String, Long>> comparator =
-                Comparator.comparing(Map.Entry::getValue);
+        // Comparator for map entries. Sort by values with reverse order, then sort by keys.
+        Comparator<Map.Entry<String, Long>> comparator = Comparator.comparing(Map.Entry<String, Long>::getValue)
+                .reversed()
+                .thenComparing(Map.Entry::getKey);
 
-        Comparator<Map.Entry<String, Long>> comparator2 =
-                comparator.reversed();
-
-        Comparator<Map.Entry<String, Long>> comparator3 =
-                comparator2.thenComparing(Map.Entry::getKey);
-
-
-
-        //Order map by value
+        // Map ordering. Key moment is to travers entry set.
         Map<String, Long> sortedWordFreq =
         wordFreq.entrySet()
                 .stream()
-                .sorted(comparator3)
+                .sorted(comparator)
                 .collect(Collectors.toMap(
                         Map.Entry::getKey,
                         Map.Entry::getValue,
@@ -44,8 +38,7 @@ public class SortingMap {
                         LinkedHashMap::new
                 ));
 
-        System.out.println(sortedWordFreq);
-
+        sortedWordFreq.forEach((key, value) -> System.out.println(key + "=" + value));
     }
 
 }
