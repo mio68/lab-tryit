@@ -14,10 +14,10 @@ class Sub extends Super {
 
 // It prints
 //QBANK
-//In SubSUB_QBANK
+// Class Sub isn't loaded because it fields or method are not accessed.
 class Question9 {
     public static void main(String[] args) {
         System.out.println(Sub.ID);
-        System.out.println(Sub.SUB_ID);
+//        System.out.println(Sub.SUB_ID);
     }
 }
