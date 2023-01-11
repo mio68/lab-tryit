@@ -52,6 +52,7 @@ public class ChildClassFromOtherPackage extends ParentClass {
 //        instanceOfParentClass.packagePrivateMethodOfParentClass();
 
         // access to protected field of an instance of parent class
+        // This field is not inherited!!!
         // NO ACCESS!!!
 //        r = instanceOfParentClass.protectedFieldOfParentClass;
 
