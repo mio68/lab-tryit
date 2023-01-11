@@ -2,6 +2,7 @@ package mio68.lab.tryit.access.otherpackage;
 
 import mio68.lab.tryit.access.ChildClass;
 import mio68.lab.tryit.access.ParentClass;
+import mio68.lab.tryit.access.thirdpackage.ChildOfAChild;
 
 public class ChildClassFromOtherPackage extends ParentClass {
 
@@ -22,7 +23,7 @@ public class ChildClassFromOtherPackage extends ParentClass {
     }
 
     // Access to inherited members (inherited member are with protected access modifier)
-    public void method() {
+    private void accessToInheritedMembers() {
         int r;
         // access to inherited package-private field IS PROHIBITED!
 //        r = packagePrivateFieldOfParentClass;
@@ -40,7 +41,7 @@ public class ChildClassFromOtherPackage extends ParentClass {
 
     // Access to members of an instance of parent class
     // ONLY PUBLIC MEMBERS ARE ACCESSIBLE!!!
-    public void method(ParentClass instanceOfParentClass) {
+    private void doSomethingWithParentInstance(ParentClass instanceOfParentClass) {
         int r;
 
         // access to package-private field of an instance of parent class
@@ -63,7 +64,7 @@ public class ChildClassFromOtherPackage extends ParentClass {
     }
 
     // Access to members of an instance of this class
-    public void method(ChildClassFromOtherPackage instanceOfThisClass) {
+    private void doSomethingWithThisClassInstance(ChildClassFromOtherPackage instanceOfThisClass) {
         int r;
 
         // access even to private field of course!
@@ -90,7 +91,7 @@ public class ChildClassFromOtherPackage extends ParentClass {
 
     // Access to members of an instance of other child of parent class
     // ONLY PUBLIC MEMBERS ARE ACCESSIBLE!!!
-    public void method(ChildClass instanceOfChildClass) {
+    private void doSomethingWithBrotherFromAnotherPackage(ChildClass instanceOfChildClass) {
         int r;
 
         // access to package-private field of an instance of other child of parent class
@@ -111,5 +112,16 @@ public class ChildClassFromOtherPackage extends ParentClass {
 
     }
 
+    private void doSomethingWithChild(ChildOfAChild child) {
+        // Have access to inherited fields
+        int fromParent = child.protectedFieldOfParentClass; //parent field
+        int ownField = child.protectedFieldOfChildClass; //own field
+
+        // Have access to inherited methods
+        child.protectedMethodOfParentClass(); // parent method
+        child.protectedMethodOfChildClass();  // own method
+
+        // no access to non-public members of child!
+    }
 
 }
