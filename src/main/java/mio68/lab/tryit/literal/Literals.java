@@ -2,6 +2,8 @@ package mio68.lab.tryit.literal;
 
 public class Literals {
     public static void main(String[] args) {
+        // It is a compile-time error if a hexadecimal, octal, or binary int literal
+        // does not fit in 32 bits.
         System.out.println(0x21L); // hexadecimal, prints 33
         System.out.println(041L); // octal, prints 33
         System.out.println(3_3L); // decimal, prints 33
