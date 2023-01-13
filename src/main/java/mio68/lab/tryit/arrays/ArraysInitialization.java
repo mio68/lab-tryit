@@ -28,5 +28,8 @@ public class ArraysInitialization {
         int[][] matrix3 = new int[][]{{1,2}, null, {4,5,6,7,8}};
         System.out.println("matrix3: " + Arrays.deepToString(matrix3));
 
+        String[] strings1 = new String[]{"one", "two"};
+        String[] strings2 = {"one", "two", "three"};
+
     }
 }
