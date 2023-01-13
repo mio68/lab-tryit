@@ -1,6 +1,7 @@
 package mio68.lab.tryit.arrays;
 
 import java.util.Arrays;
+import java.util.logging.SocketHandler;
 
 public class ArraysInitialization {
 
@@ -17,6 +18,15 @@ public class ArraysInitialization {
 
         boolean[] booleans = new boolean[3];
         System.out.println("array of booleans is initialized: " + Arrays.toString(booleans));
+
+        int[][] checks = new int[3][3];
+        System.out.println("check initial state: " + Arrays.deepToString(checks));
+        int[][] matrix = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        System.out.println("matrix: " + Arrays.deepToString(matrix));
+        int[][] matrix2 = new int[2][];
+        System.out.println("matrix2: " + Arrays.deepToString(matrix2));
+        int[][] matrix3 = new int[][]{{1,2}, null, {4,5,6,7,8}};
+        System.out.println("matrix3: " + Arrays.deepToString(matrix3));
 
     }
 }
