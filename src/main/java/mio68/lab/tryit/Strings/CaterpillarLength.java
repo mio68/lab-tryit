@@ -18,6 +18,9 @@ public class CaterpillarLength {
 
         String greet = "Привет Joker";
         System.out.println(toStringOfHex(greet));
+
+        String whatIsThis = "\uD83D\uDC1B";
+        System.out.println("this is [" + whatIsThis + "]");
     }
 
     static String toStringOfHex(String s) {
