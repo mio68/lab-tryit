@@ -25,6 +25,12 @@ public class SwitchWitEnum {
             default -> System.out.println("default");
         }
 
+        // Compilation is Ok, but IDEA warns about it!
+        // 'switch' statement has too few case labels (1), and should probably be replaced with an 'if' statement
+        switch (num) {
+            case ONE -> System.out.println(type);
+        }
+
     }
 
 }
