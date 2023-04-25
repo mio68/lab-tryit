@@ -47,6 +47,7 @@ public class ValueAndBuilder {
 
         johnDowngraded = johnUpgraded.toBuilder()
                 .clearSkills()
+                .skills(Set.of("C++"))
                 .build();
         System.out.println(johnDowngraded);
     }
