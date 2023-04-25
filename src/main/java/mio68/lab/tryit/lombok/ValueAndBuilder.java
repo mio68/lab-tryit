@@ -34,6 +34,7 @@ public class ValueAndBuilder {
                 .build();
         System.out.println(johnUpgraded);
 
+        // This doesn't work
 //        Person johnDowngraded = johnUpgraded.toBuilder()
 //                .skills(Collections.emptySet())
 //                .build();
@@ -44,6 +45,10 @@ public class ValueAndBuilder {
 
         System.out.println(johnDowngraded);
 
+        johnDowngraded = johnUpgraded.toBuilder()
+                .clearSkills()
+                .build();
+        System.out.println(johnDowngraded);
     }
 
 }
