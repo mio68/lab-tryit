@@ -11,7 +11,7 @@ public class Puzzle3LongDivision {
         System.out.println(ms);
         System.out.println(us / ms); // prints 5
 
-        long us2 = 24 * 60 * 60 * 1000 * 1000L; // Just one L symbol solves the problem!
+        long us2 = 24L * 60 * 60 * 1000 * 1000; // Just one L symbol solves the problem!
         System.out.println(us2); // 86400000000 correct!
         System.out.println(us2 / ms); // 1000 - correct!
     }
