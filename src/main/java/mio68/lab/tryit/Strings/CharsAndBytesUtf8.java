@@ -7,6 +7,7 @@ import java.util.Arrays;
 
 /*
 Char literal - \\uxxxx. Here xxxx represents 4 hexadecimal numbers.
+Note: wihout duobled backslash \\uxxxx is illegal unicode escape
 
 UTF-8 encoding
 '\u0000' to '\u007F' - one byte - 0xxxxxxx - 7 bits
