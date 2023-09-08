@@ -18,8 +18,8 @@ public class MapIdioms {
         System.out.println("Remove entries that match predicate: " + movies);
 
         // Merge
-        movies.merge("James Bond", 1, (oldVal, newVal) -> oldVal + 1);
-        movies.merge("Harry Potter", 1, (oldVal, newVal) -> oldVal + 1);
+        movies.merge("James Bond", 100, (oldVal, newVal) -> oldVal + newVal);
+        movies.merge("Harry Potter", 1, (oldVal, newVal) -> oldVal + newVal);
         System.out.println("Merged: " + movies);
     }
 
