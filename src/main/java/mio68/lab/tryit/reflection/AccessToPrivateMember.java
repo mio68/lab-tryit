@@ -6,6 +6,7 @@ import java.lang.reflect.Method;
 
 class A {
     private String motto = "I am private string!";
+    protected String prot = "Prot";
     private void method() {
         System.out.println("I am private method");
     }
