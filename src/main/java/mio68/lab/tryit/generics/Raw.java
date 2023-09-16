@@ -7,8 +7,9 @@ public class Raw {
     public static void main(String[] args) {
         List raw = new ArrayList<String>();
         raw.clear();
-        raw.add(42);
+        raw.add(Integer.valueOf(42));
         System.out.println(raw);
         Object o = raw.get(0);
+        System.out.println(o.getClass().getName());
     }
 }

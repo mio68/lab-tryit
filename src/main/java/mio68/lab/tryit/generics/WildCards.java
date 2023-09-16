@@ -28,6 +28,7 @@ public class WildCards {
 //        integers = numExts; // It' incorrect!
 //        List<Object> objs = numExts; // wildcard parametrized can'b assigned to parametrized
         List lst = numExts; // It's only possible assigment
+        lst = integers; // it's ok
         numExts = integers; // It's OK! numExts produces subclasses of Numbers,
                             // and integers suits this case!
         System.out.println( numExts.get(0)); // prints 1

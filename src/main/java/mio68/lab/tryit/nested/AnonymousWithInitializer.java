@@ -23,6 +23,7 @@ class Person {
 
 class PersonService {
     public Person create(int id, String name) {
+        // PersonService defines anonymous class that extends Person
         return new Person() {{
             setId(id);
             setName(name);
@@ -34,9 +35,10 @@ public class AnonymousWithInitializer {
     private static PersonService personService = new PersonService();
 
     public static void main(String[] args) {
-        System.out.println(
-                personService.create(12, "Ivan").getClass().getName()
-        );
+        Class<? extends Person> ivan = personService.create(12, "Ivan").getClass();
+        System.out.println(ivan.getName()); // mio68.lab.tryit.nested.PersonService$1
+        System.out.println(ivan.getSuperclass().getName()); // mio68.lab.tryit.nested.Person
+
     }
 
 }
