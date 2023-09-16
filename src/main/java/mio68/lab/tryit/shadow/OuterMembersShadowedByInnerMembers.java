@@ -26,7 +26,7 @@ class Outer {
             System.out.println(this.getClass().getSimpleName()); // Inner
         }
 
-        // How to get field of outer?
+        // How to get field of outer? Use <OuterType>.this
         void test3() {
             System.out.println(Outer.this.field);
             Outer.this.m();

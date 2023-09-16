@@ -15,6 +15,7 @@ public class Nested {
     }
 
     public Person getPerson() {
+        // anonymous
         return new Person() {
             @Override
             public String getFirstName() {
