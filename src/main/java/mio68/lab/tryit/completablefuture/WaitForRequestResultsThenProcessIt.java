@@ -34,9 +34,16 @@ public class WaitForRequestResultsThenProcessIt {
                         .thenApply(v -> report(request1.join(), request2.join(), request3.join()));
 
         try {
+            CompletableFuture.allOf(request1, request2, request3).join();
+        } catch (Exception e) {
+            log.info("Wait for all completion failed", e);
+        }
+
+
+        try {
             log.info("Final result: [{}]", result.get());
         } catch (InterruptedException | ExecutionException e) {
-            log.info("Failed", e);
+            log.info("Getting result failed", e);
         }
     }
 
@@ -55,7 +62,7 @@ public class WaitForRequestResultsThenProcessIt {
 
         String getResult() {
             long delay = randomDelay();
-            if (delay > 2900) {
+            if (delay > 2000) {
                 throw new RuntimeException(name + " failed");
             }
             log.info(name + " is done.");
